@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'config/routes/app_pages.dart';
 
@@ -13,16 +12,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dawlance App',
       theme: ThemeData(
-          fontFamily: 'Poppins',
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Poppins',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ),
         useMaterial3: true,
       ),
-      initialRoute: AppPages.initial,
-      getPages: AppPages.routes,
+      initialRoute: Routes.splash,
+      onGenerateRoute: AppRoutes.onGenerate,
     );
   }
 }

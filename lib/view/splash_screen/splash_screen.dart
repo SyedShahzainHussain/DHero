@@ -1,6 +1,5 @@
 import 'package:dhero/utils/extension/general_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../config/colors.dart';
 import '../../config/routes/app_pages.dart';
@@ -30,7 +29,8 @@ class Splashscreen extends StatelessWidget {
         ),
         floatingActionButton: GestureDetector(
           onTap: () {
-            Get.offAllNamed(Routes.onBoardScreen);
+            Navigator.pushNamedAndRemoveUntil(
+                context, Routes.onBoardScreen, (route) => false);
           },
           child: const ImageIcon(
             AssetImage(
